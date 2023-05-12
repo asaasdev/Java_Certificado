@@ -1,5 +1,6 @@
 package br.com.swconsultoria.certificado;
 
+import java.math.BigInteger;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -29,6 +30,7 @@ public class Certificado {
     private boolean valido;
     private boolean ativarProperties;
     private String sslProtocol;
+    private BigInteger numeroSerie;
 
     public Certificado() {
         this.setAtivarProperties(false);
@@ -68,7 +70,8 @@ public class Certificado {
 	}
 
 	/**
-	 * @return the nome
+	 *Returns the nome.
+ 
 	 */
 	public String getNome() {
 		return nome;
@@ -82,7 +85,8 @@ public class Certificado {
 	}
 
 	/**
-	 * @return the vencimento
+	 *Returns the vencimento.
+ 
 	 */
 	public LocalDate getVencimento() {
 		return vencimento;
@@ -96,7 +100,8 @@ public class Certificado {
 	}
 
 	/**
-	 * @return the dataHoraVencimento
+	 *Returns the dataHoraVencimento.
+ 
 	 */
 	public LocalDateTime getDataHoraVencimento() {
 		return dataHoraVencimento;
@@ -110,7 +115,8 @@ public class Certificado {
 	}
 
 	/**
-	 * @return the diasRestantes
+	 *Returns the diasRestantes.
+ 
 	 */
 	public Long getDiasRestantes() {
 		return diasRestantes;
@@ -124,7 +130,8 @@ public class Certificado {
 	}
 
 	/**
-	 * @return the valido
+	 *Returns the valido.
+ 
 	 */
 	public boolean isValido() {
 		return valido;
@@ -138,7 +145,8 @@ public class Certificado {
 	}
 
 	/**
-	 * @return the arquivo
+	 *Returns the arquivo.
+ 
 	 */
 	public String getArquivo() {
 		return arquivo;
@@ -152,22 +160,24 @@ public class Certificado {
 	}
 
 	/**
-	 * @return the arquivo_bytes
+	 *Returns the arquivo_bytes.
+ 
 	 */
 	public byte[] getArquivoBytes() {
 		return arquivoBytes;
 	}
 
 	/**
-	 * @param arquivo_bytes
+	 * @param arquivoBytes
 	 *            the arquivo_bytes to set
 	 */
-	public void setArquivoBytes(byte[] arquivo_bytes) {
-		this.arquivoBytes = arquivo_bytes;
+	public void setArquivoBytes(byte[] arquivoBytes) {
+		this.arquivoBytes = arquivoBytes;
 	}
 
 	/**
-	 * @return the senha
+	 *Returns the senha.
+ 
 	 */
 	public String getSenha() {
 		return senha;
@@ -181,7 +191,8 @@ public class Certificado {
 	}
 
 	/**
-	 * @return the dllA3
+	 *Returns the dllA3.
+ 
 	 */
 	public String getDllA3() {
 		return dllA3;
@@ -195,7 +206,8 @@ public class Certificado {
 	}
 
 	/**
-	 * @return the marcaA3
+	 *Returns the marcaA3.
+
 	 */
 	public String getMarcaA3() {
 		return marcaA3;
@@ -215,4 +227,26 @@ public class Certificado {
     public void setTipoCertificado(TipoCertificadoEnum tipoCertificado) {
         this.tipoCertificado = tipoCertificado;
     }
+
+    /** Returns the certificado numeroSerie */
+    public BigInteger getNumeroSerie() {
+        return numeroSerie;
+    }
+
+    /** The certificado numeroSerie to set.
+	 * @param numeroSerie numeroSerie to set.
+	 */
+    public void setNumeroSerie(BigInteger numeroSerie) {
+        this.numeroSerie = numeroSerie;
+    }
+
+    @Override
+	public String toString() {
+		return "Certificado{" +
+				"nome='" + nome + '\'' +
+				", dataHoraVencimento=" + dataHoraVencimento +
+				", cnpjCpf='" + cnpjCpf + '\'' +
+				", tipoCertificado=" + tipoCertificado +
+				'}';
+	}
 }
