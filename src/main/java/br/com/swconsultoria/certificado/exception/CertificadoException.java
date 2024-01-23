@@ -19,7 +19,10 @@ public class CertificadoException extends Exception {
 		super(e);
 	}
 
-	
+	public CertificadoException(String message, Throwable cause) {
+		super(message, cause);
+	}
+
 	/**
 	 * Construtor da classe.
 	 * 
@@ -33,6 +36,7 @@ public class CertificadoException extends Exception {
 	/**
 	 * @return the message
 	 */
+	@Override
 	public String getMessage() {
 		return message;
 	}
